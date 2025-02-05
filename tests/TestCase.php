@@ -2,9 +2,9 @@
 
 namespace alecgarcia\LunarAuthorizeNet\Tests;
 
+use alecgarcia\LunarAuthorizeNet\LunarAuthorizeNetServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use alecgarcia\LunarAuthorizeNet\LunarAuthorizeNetServiceProvider;
 
 class TestCase extends Orchestra
 {
