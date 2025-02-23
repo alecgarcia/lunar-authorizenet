@@ -2,10 +2,10 @@
 
 namespace alecgarcia\LunarAuthorizeNet;
 
+use alecgarcia\LunarAuthorizeNet\Commands\LunarAuthorizeNetCommand;
 use Lunar\Facades\Payments;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use alecgarcia\LunarAuthorizeNet\Commands\LunarAuthorizeNetCommand;
 
 class LunarAuthorizeNetServiceProvider extends PackageServiceProvider
 {
@@ -20,6 +20,7 @@ class LunarAuthorizeNetServiceProvider extends PackageServiceProvider
             return $app->make(AuthorizeNet::class);
         });
     }
+
     public function configurePackage(Package $package): void
     {
         /*

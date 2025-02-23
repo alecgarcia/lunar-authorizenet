@@ -4,11 +4,9 @@ namespace alecgarcia\LunarAuthorizeNet;
 
 use Lunar\Base\DataTransferObjects\PaymentAuthorize;
 use Lunar\Base\DataTransferObjects\PaymentCapture;
-use Lunar\Base\DataTransferObjects\PaymentCheck;
-use Lunar\Base\DataTransferObjects\PaymentChecks;
 use Lunar\Base\DataTransferObjects\PaymentRefund;
-use Lunar\PaymentTypes\AbstractPayment;
 use Lunar\Models\Transaction;
+use Lunar\PaymentTypes\AbstractPayment;
 
 class AuthorizeNetPaymentType extends AbstractPayment
 {
@@ -26,30 +24,21 @@ class AuthorizeNetPaymentType extends AbstractPayment
     /**
      * Authorize the payment for processing.
      */
-    final public function authorize(): ?PaymentAuthorize
-    {
-
-    }
+    final public function authorize(): ?PaymentAuthorize {}
 
     /**
      * Capture a payment for a transaction.
      *
      * @param  int  $amount
      */
-    public function capture(Transaction $transaction, $amount = 0): PaymentCapture
-    {
-
-    }
+    public function capture(Transaction $transaction, $amount = 0): PaymentCapture {}
 
     /**
      * Refund a captured transaction
      *
      * @param  string|null  $notes
      */
-    public function refund(Transaction $transaction, int $amount = 0, $notes = null): PaymentRefund
-    {
-
-    }
+    public function refund(Transaction $transaction, int $amount = 0, $notes = null): PaymentRefund {}
 
     protected function storeTransaction($transaction, $success = false)
     {
