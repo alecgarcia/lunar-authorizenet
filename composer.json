@@ -71,7 +71,7 @@
                 "alecgarcia\\LunarAuthorizeNet\\LunarAuthorizeNetServiceProvider"
             ],
             "aliases": {
-                "LunarAuthorizeNet": "alecgarcia\\LunarAuthorizeNet\\Facades\\LunarAuthorizeNet"
+                "LunarAuthorizeNet": "AuthorizeNet"
             }
         }
     },
