@@ -21,8 +21,10 @@
     ],
     "require": {
         "php": "^8.3",
-        "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^10.0||^11.0"
+        "authorizenet/authorizenet": "^2.0",
+        "illuminate/contracts": "^10.0||^11.0",
+        "lunarphp/core": "^1.0.0-beta",
+        "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
         "laravel/pint": "^1.14",

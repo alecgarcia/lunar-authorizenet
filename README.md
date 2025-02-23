@@ -41,6 +41,39 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="lunar-authorizenet-views"
 ```
 
+### Enable the driver
+
+Set the driver in `config/lunar/payments.php`
+
+```php
+<?php
+
+return [
+    // ...
+    'types' => [
+        'card' => [
+            // ...
+            'driver' => 'authorizenet',
+        ],
+    ],
+];
+```
+
+### Add your Stripe credentials
+
+Make sure you have the Stripe credentials set in `config/services.php`
+
+```php
+'authorizenet' => [
+    'apiLoginID' => env('AUTHORIZE_NET_LOGIN_ID'),
+    'transactionKey' => env('AUTHORIZE_NET_TRANSACTION_KEY'),
+    'clientKey' => env('AUTHORIZE_NET_CLIENT_KEY'),
+    'webhooks' => [
+        'lunar' => env('LUNAR_AUTHORIZE_NET_WEBHOOK_SECRET'),
+    ],
+],
+```
+
 ## Usage
 
 ```php
