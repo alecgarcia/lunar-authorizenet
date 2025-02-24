@@ -2,7 +2,6 @@
 
 namespace alecgarcia\LunarAuthorizeNet\Components;
 
-use alecgarcia\LunarAuthorizeNet\AuthorizeNet;
 use Livewire\Component;
 use Lunar\Models\Cart;
 
