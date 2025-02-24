@@ -59,9 +59,9 @@ return [
 ];
 ```
 
-### Add your Stripe credentials
+### Add your Authorize.Net credentials
 
-Make sure you have the Stripe credentials set in `config/services.php`
+Make sure you have the Authorize.Net credentials set in `config/services.php`
 
 ```php
 'authorizenet' => [

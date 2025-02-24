@@ -14,17 +14,10 @@ class AuthorizeNet
 {
     protected MerchantAuthenticationType $merchantAuthentication;
 
-    public function __construct()
-    {
-        $this->merchantAuthentication = new MerchantAuthenticationType;
-        $this->merchantAuthentication->setName(config('services.authorizenet.apiLoginID'));
-        $this->merchantAuthentication->setTransactionKey(config('services.authorizenet.transactionKey'));
-    }
-
     public function createAnAcceptPaymentTransaction(int $amount, string $dataDescriptor, string $dataValue)
     {
         $request = new CreateTransactionRequest;
-        $request->setMerchantAuthentication($this->merchantAuthentication);
+        $request->setMerchantAuthentication($this->getMerchantAuthentication());
 
         // Create a TransactionRequestType object
         $transactionRequest = new TransactionRequestType;
@@ -80,5 +73,18 @@ class AuthorizeNet
         ) === 'production'
             ? ANetEnvironment::PRODUCTION
             : ANetEnvironment::SANDBOX;
+    }
+
+    protected function getMerchantAuthentication(): MerchantAuthenticationType
+    {
+        if (isset($this->merchantAuthentication)) {
+            return $this->merchantAuthentication;
+        }
+
+        $this->merchantAuthentication = new MerchantAuthenticationType;
+        $this->merchantAuthentication->setName(config('services.authorizenet.apiLoginID'));
+        $this->merchantAuthentication->setTransactionKey(config('services.authorizenet.transactionKey'));
+
+        return $this->merchantAuthentication;
     }
 }
